@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URI = 'http://localhost:5000/api/tasks';
+const API_URI = 'https://todo-backend-oj25smsv6-nikhils-projects-fc6fb721.vercel.app/api/tasks';
 
 export const createTask = (task) => axios.post(API_URI, task);
 export const getTasks = () => axios.get(API_URI);
