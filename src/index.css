@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.container {
+  height: 100vh;
+  padding: 1.5rem 1rem;
+  margin: 0 auto;
+  overflow-x: hidden;
+  min-width: 1200px;
+}
+
+.mainHeading {
+  color: #57534D;
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.grid {
+  gap: 2rem;
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: 2fr 1fr;
+}
+
+.leftPanel {
+  padding: 1.25rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: .6rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.leftPanel::-webkit-scrollbar {
+  width: .4rem;
+}
+
+.rightPanel {
+  padding: 1.25rem;
+  height: fit-content;
+  border-radius: .5rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rightPanel h2 {
+  color: #737373;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: .75rem;
+  border-radius: .3rem;
+  padding: .5rem .65rem;
+  border: 1px solid #aaa;
+}
+
+form button {
+  width: 100%;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: .35rem;
+  background-color: #007bff;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.task {
+  padding: 1rem;
+  display: flex;
+  margin-bottom: 1.25rem;
+  border-radius: .5rem;
+  align-items: flex-start;
+  border: 1px solid #eee;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.taskDetails {
+  flex-grow: 1;
+}
+
+.taskTitle {
+  font-size: 1.2rem;
+  margin-bottom: .4rem;
+}
+
+.taskActions {
+  gap: .4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskActions button{
+  border: none;
+  cursor: pointer;
+  border-radius: .3rem;
+  padding: .5rem .75rem;
+}
+
+.taskActions button:first-child {
+  background-color: #36BBA7;
+  color: white;
+}
+
+.taskActions button:last-child {
+  background-color: #FF6467;
+  color: white;
+}
+
+.fade {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rightPanel {
+    margin-top: 2rem;
+  }
+
+  .task {
+    flex-direction: column;
+  }
+
+  .taskActions {
+    margin-top: .7rem;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+
+.Toastify__toast {
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Success Toast */
+.Toastify__toast--success {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+/* Error Toast */
+.Toastify__toast--error {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+/* Close Button */
+.Toastify__close-button {
+  color: #333;
+}
