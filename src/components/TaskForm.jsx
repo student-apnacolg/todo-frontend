@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 
 function TaskForm({ onCreate, onUpdate, editingTask }) {
-
   const titleRef = useRef();
 
   const [task, setTask] = useState({
@@ -46,44 +45,46 @@ function TaskForm({ onCreate, onUpdate, editingTask }) {
   };
 
   return (
-      <form onSubmit={handleSubmit}>
-        <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
-        <input
-          type="text"
-          name="title"
-          ref={titleRef}
-          placeholder="Title"
-          value={task.title}
-          onChange={handleChange}
-        />
-        <br />
-        <textarea
-          name="description"
-          placeholder="Description"
-          value={task.description}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="date"
-          name="dueDate"
-          value={task.dueDate?.slice(0, 10)}
-          onChange={handleChange}
-        />
-        {editingTask && (
-          <label>
-            Completed:
+    <form onSubmit={handleSubmit}>
+      <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
+      <input
+        type="text"
+        name="title"
+        ref={titleRef}
+        placeholder="Title"
+        value={task.title}
+        onChange={handleChange}
+      />
+      <br />
+      <textarea
+        name="description"
+        placeholder="Description"
+        value={task.description}
+        onChange={handleChange}
+      />
+      <br />
+      <input
+        type="date"
+        name="dueDate"
+        value={task.dueDate?.slice(0, 10)}
+        onChange={handleChange}
+      />
+      {editingTask && (
+        <div className="checkBoxWrapper">
+          <label htmlFor="completed" className="checkBoxLabel">Completed:</label>
             <input
               type="checkbox"
+              id="completed"
               name="completed"
+              className="customCheckBox"
               checked={task.completed}
               onChange={handleCheckboxChange}
             />
-          </label>
-        )}
+        </div>
+      )}
 
-        <button type="submit">{editingTask ? "Update" : "Add"} Task</button>
-      </form>
+      <button type="submit">{editingTask ? "Update" : "Add"} Task</button>
+    </form>
   );
 }
 
