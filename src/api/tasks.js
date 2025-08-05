@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URI = 'https://todo-backend-one-red.vercel.app/api/tasks';
+const API_URI = 'https://todo-backend-evep.onrender.com/api/tasks';
 
 export const createTask = (task) => axios.post(API_URI, task);
 export const getTasks = () => axios.get(API_URI);
