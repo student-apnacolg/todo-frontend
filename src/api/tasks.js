@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_URI = axios.create({
+const API = axios.create({
   baseURL: 'https://todo-backend-evep.onrender.com/api/tasks',
   withCredentials: true
 })
 
-export const createTask = (task) => axios.post(API_URI, task);
-export const getTasks = () => axios.get(API_URI);
-export const updateTask = (id, updatedTask) => axios.put(`${API_URI}/${id}`, updatedTask);
-export const deleteTask = (id) => axios.delete(`${API_URI}/${id}`);
+export const createTask = (task) => API.post('/', task);
+export const getTasks = () => API.get('/');
+export const updateTask = (id, updatedTask) => API.put(`/${id}`, updatedTask);
+export const deleteTask = (id) => API.delete(`/${id}`);
