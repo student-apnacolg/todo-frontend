@@ -16,7 +16,7 @@ body {
   padding: 1.5rem 1rem;
   margin: 0 auto;
   overflow-x: hidden;
-  min-width: 1200px;
+  max-width: 1200px;
 }
 
 .mainHeading {
@@ -31,9 +31,11 @@ body {
   display: grid;
   margin-top: 2rem;
   grid-template-columns: 2fr 1fr;
+  grid-template-areas: "left right";
 }
 
 .leftPanel {
+  grid-area: left;
   padding: 1.25rem;
   max-height: 80vh;
   overflow-y: auto;
@@ -47,6 +49,7 @@ body {
 }
 
 .rightPanel {
+  grid-area: right;
   padding: 1.25rem;
   height: fit-content;
   border-radius: .5rem;
@@ -154,10 +157,14 @@ form button:hover {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    grid-template-areas: 
+    "right"
+    "left";
   }
 
   .rightPanel {
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   .task {
